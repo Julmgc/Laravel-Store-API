@@ -1,64 +1,186 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+​<div align ="center">
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## <font size="7">**Store API**</font>
 
-## About Laravel
+</div>
+<br></br>
+<div align ="center" >
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<font size="6">Description </font>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</div>
+<br></br>
+<div align ="center" font size="4">
+<font size="4">This is an API for a store and products, the technologies used were, PHP, Laravel and SQLite.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+License: MIT</font>
 
-## Learning Laravel
+<div align ="center" font size="4">
+<font size="4">On your terminal, run:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+composer create-project laravel/laravel store-api
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+cd store-api
 
-## Laravel Sponsors
+To create the tables run:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+php artisan migrate
 
-### Premium Partners
+To populate the db:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+php artisan db:seed
 
-## Contributing
+In order to use this app you should use an application for HTTP client, like postman, insomnia, etc.</font>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+</div>
+</div>
+<div align ="center" >
 
-## Code of Conduct
+<font size="6">Base URL: </font>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+</div>
+<div align ="center">
+<font size="4">/api</font>
+</div>
 
-## Security Vulnerabilities
+​<div align ="center">
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<font size="4">POST /store/</font>
+<br></br>
+<font size="4">Create a store</font>
 
-## License
+</div>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<br></br>
+<font color="caramel"> Request </font>
+​
+
+```json
+{
+    "name": "Furniture store"
+}
+```
+
+​
+<font color="yellow"> _Response_ </font>
+​
+
+```json
+{
+    "name": "Furniture Store",
+    "description": "A great store",
+    "updated_at": "2022-05-23T17:32:02.000000Z",
+    "created_at": "2022-05-23T17:32:02.000000Z",
+    "id": 13
+}
+```
+
+​​<div align ="center">
+
+<font size="4">GET /stores/</font>
+<br></br>
+<font size="4">List of all stores</font>
+
+</div>
+
+<font color="caramel"> Response </font>
+
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Furniture Store",
+            "description": "great store",
+            "created_at": "2022-05-23T15:49:33.000000Z",
+            "updated_at": "2022-05-23T17:05:04.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "perspiciatis dolorum eius",
+            "description": "Tenetur voluptate dolor est voluptates unde et cumque ad.",
+            "created_at": "2022-05-23T17:18:51.000000Z",
+            "updated_at": "2022-05-23T17:18:51.000000Z"
+        },
+}
+```
+
+<br></br>
+
+<div align ="center">
+
+<font size="4">PUT /stores/<int:store_id>/</font>
+<br></br>
+<font size="4">Change a store name and description</font>
+<br></br>
+
+</div>
+
+<font color="caramel"> Request </font>
+
+```json
+{
+    "name": "Confy",
+    "description": "Chairs store"
+}
+```
+
+​
+<font color="yellow"> _Response_ </font>
+​
+
+```json
+{
+    "id": 1,
+    "name": "Confy",
+    "description": "Chairs store",
+    "created_at": "2022-05-23T15:49:33.000000Z",
+    "updated_at": "2022-05-23T17:34:03.000000Z"
+}
+```
+
+<br></br>
+
+<div align ="center">
+
+<font size="4">PATCH /stores/<int:store_id>/</font>
+<br></br>
+<font size="4">Change a store name or description</font>
+<br></br>
+
+</div>
+
+<font color="caramel"> Request </font>
+
+```json
+{
+    "description": "Red chairs store"
+}
+```
+
+​
+<font color="yellow"> _Response_ </font>
+​
+
+```json
+{
+    "id": 1,
+    "name": "Confy",
+    "description": "Red chairs store",
+    "created_at": "2022-05-23T15:49:33.000000Z",
+    "updated_at": "2022-05-23T17:34:03.000000Z"
+}
+```
+
+<br></br>
+
+<div align ="center">
+
+<font size="4">Delete a store</font>
+<font size="4">DELETE /stores/<int:course_id>/</font>
+<br></br>
+
+</div>
+
+​
