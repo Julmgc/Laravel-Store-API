@@ -16,11 +16,13 @@
 License: MIT</font>
 
 <div align ="center" font size="4">
-<font size="4">On your terminal, run:
+<font size="4">On your terminal:
 
-composer create-project laravel/laravel store-api
+make a copy of this project
 
-cd store-api
+git@github.com:Julmgc/Laravel-Store-API.git
+
+cd Laravel-Store-API
 
 To create the tables run:
 
