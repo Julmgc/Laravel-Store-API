@@ -30,6 +30,10 @@ To populate the db:
 
 php artisan db:seed
 
+To run your server type:
+
+php artisan serve
+
 In order to use this app you should use an application for HTTP client, like postman, insomnia, etc.</font>
 
 </div>
